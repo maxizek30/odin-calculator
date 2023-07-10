@@ -1,3 +1,10 @@
+let num1;
+let num2
+let operation;
+
+
+
+
 function add (a, b) {
     return a + b;
 }
