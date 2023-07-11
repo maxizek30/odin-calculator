@@ -15,10 +15,15 @@ body {
      justify-content: center;
      background-color: #F2F2F2;
      padding: 30px;
+     gap: 30px;
 }
 .display {
     background-color: #505455;
-    color: white
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
 }
 .buttons {
     display: flex;
@@ -26,10 +31,17 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    height: 600px;
+    padding: 30px;
 }
 .calcButton {
     width: 40px;
     height: 40px;
     background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#clear {
+    background-color: red;
+    color: white;
 }
