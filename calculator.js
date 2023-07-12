@@ -48,7 +48,8 @@ function buttonPressed(e) {
 
 }
 function updateDisplay() {
-    console.log(num1 + " " + operation + " " + num2);
+    display.innerHTML = num1 + " " + operation + " " + num2;
+
 }
 
 function operate() {
