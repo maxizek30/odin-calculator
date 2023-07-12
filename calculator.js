@@ -1,29 +1,69 @@
 let num1;
-let num2
+let operationInProgress;
+let num2;
 let operation;
-let displayValue;
 const display = document.querySelector('.display');
 const calcButtons = document.querySelectorAll('.calcButton');
+resetValues();
 calcButtons.forEach((item) => {
-    item.addEventListener('click', button)
+    item.addEventListener('click', buttonPressed)
 });
 
 //flow 
 
-function buttonPressed(e) {
-    switch(e.target.id) {
-        case clear:
-            num1 = "o";
-            num2 = "o";
 
+function buttonPressed(e) {
+    switch(e.target.dataset.type) {
+        case "num":
+            if (operationInProgress === true) {
+                num2 = num2 + "" + e.target.id;
+            }
+            else {
+                num1 = num1 + "" + e.target.id;
+            }
+            updateDisplay();
+            break;
+        case "operation":
+            if (num1 === "" || !operation === "") {
+                //do nothing
+            }
+            else {
+                operationInProgress = true;
+                operation = e.target.id;
+                updateDisplay();
+            }
+            break;
+        case "equals":
+            num1 = operate();
+            let temp = num1;
+            resetValues();
+            num1 = temp;
+            updateDisplay();
+            break;
+        case "clear":
+            resetValues();
+            updateDisplay();
+            break;
     }
+
 }
 function updateDisplay() {
-    display.innerHTML = num1 + " " + operation + " " + num2;
+    console.log(num1 + " " + operation + " " + num2);
 }
 
-function operate(num1, num2) {
-    return null;
+function operate() {
+    let a = parseInt(num1);
+    let b = parseInt(num2);
+    switch (operation) {
+        case "+":
+            return add(a, b);
+        case "-":
+            return subtract(a, b);
+        case "*":
+            return multiply(a, b);
+        case "/": 
+            return divide(a, b);
+    }
 }
 //operations
 function add (a, b) {
@@ -37,4 +77,10 @@ function multiply (a, b) {
 }
 function divide (a, b) {
     return a / b;
+}
+function resetValues() {
+    num1 = "";
+    num2 = "";
+    operation = ""; 
+    operationInProgress = "false";
 }
