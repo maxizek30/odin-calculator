@@ -1,21 +1,22 @@
-body {
+.container {
     display: flex;
     justify-content: center;
-    background-image: url("https://wallpapers.com/images/hd/anime-school-background-0akglzygbxchtz5t.jpg");
+    align-items: center;
+    height: 100vh;
 }
 .calculator {
     display: flex;
     flex-direction: column;
-    background-color:antiquewhite #202026;
+    background-color:red;
     width: 500px;
+    border: solid black;
     
 }
 .topSection {
      display: flex;
      justify-content: center;
      background-color: #F2F2F2;
-     padding: 30px;
-     gap: 30px;
+     padding: 10px;
 }
 .display {
     background-color: #505455;
@@ -23,25 +24,35 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 200px;
+    width: 95%;
+    height: 100px;
 }
 .buttons {
     display: flex;
+    flex-direction: column;
     background-color: #202026;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
-    padding: 30px;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+}
+.calcRow { 
+    display: flex;
+    gap: 5px;
 }
 .calcButton {
-    width: 40px;
-    height: 40px;
-    background-color: white;
+    width: 100px;
+    height: 80px;
+    background-color: #EDF0EA;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 25px;
+    
 }
-#clear {
-    background-color: red;
-    color: white;
+.doubleWidth {
+    width: 205px; /* Adjust based on your desired width and the gap between buttons */
+}
+[data-type="operation"] {
+    background-color: #D6D7D7;
 }
