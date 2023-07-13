@@ -16,10 +16,21 @@ function buttonPressed(e) {
     switch(e.target.dataset.type) {
         case "num":
             if (operationInProgress === true) {
-                num2 = num2 + "" + e.target.id;
+                if (e.target.id == 0 && num2 == "") {
+                    //do nothing
+                }
+                else {
+                    num2 = num2 + "" + e.target.id;
+                }
+                
             }
             else {
-                num1 = num1 + "" + e.target.id;
+                if (e.target.id == 0 && num1 == "") {
+                    //do nothing
+                }
+                else {
+                    num1 = num1 + "" + e.target.id;
+                }
             }
             updateDisplay();
             break;
