@@ -24,8 +24,17 @@ function buttonPressed(e) {
             updateDisplay();
             break;
         case "operation":
-            if (num1 === "" || !operation === "") {
+            if (num1 === "") {
                 //do nothing
+            }
+            else if (operation != "" && num2 != "") {
+                num1 = operate();
+                let temp = num1;
+                resetValues();
+                num1 = temp;
+                operationInProgress = true;
+                operation = e.target.id;
+                updateDisplay();
             }
             else {
                 operationInProgress = true;
