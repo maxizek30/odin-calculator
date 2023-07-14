@@ -80,6 +80,7 @@ function buttonPressed(e) {
 }
 function updateDisplay() {
     prevCalc.innerHTML = prevOperation;
+    
     display.innerHTML = num1 + " " + operation + " " + num2;
 
 }
@@ -109,7 +110,11 @@ function multiply (a, b) {
     return a * b;
 }
 function divide (a, b) {
-    return a / b;
+    let num = a / b ;
+    if (num.toString().length > 8) {
+        num = num.toFixed(8);
+    }
+    return num;
 }
 function resetValues() {
     num1 = "";
