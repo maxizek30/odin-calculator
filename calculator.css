@@ -1,3 +1,6 @@
+body {
+    background-color: #F4BD58;
+}
 .container {
     display: flex;
     justify-content: center;
@@ -18,12 +21,12 @@
 .topSection {
      display: flex;
      justify-content: center;
-     background-color: #F2F2F2;
+     background-color: #CACBD0;
      padding: 10px;
 }
 
 .fullDisplay {
-    background-color: #505455;
+    background-color: #7A7E63;
     color: white;
     display: flex;
     flex-direction: column;
@@ -40,7 +43,6 @@
 .display {
     display: flex;
     justify-content: flex-end;
-    
     font-size: 45px;
 }
 .buttons {
@@ -73,3 +75,8 @@
 [data-type="operation"] {
     background-color: #D6D7D7;
 }
+[data-type="clear"] {
+    background-color: #809AB1;
+    /*Alternate green color: #83BE86*/
+}
+

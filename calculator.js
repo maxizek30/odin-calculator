@@ -58,12 +58,17 @@ function buttonPressed(e) {
             }
             break;
         case "equals":
-            prevOperation = num1 + " " + operation + " " + num2;
-            num1 = operate();
-            let temp = num1;
-            resetValues();
-            num1 = temp;
-            updateDisplay();
+            if (num1 == "" || num2 == "" || operation == "") {
+                //do nothing
+            }
+            else {
+                prevOperation = num1 + " " + operation + " " + num2;
+                num1 = operate();
+                let temp = num1;
+                resetValues();
+                num1 = temp;
+                updateDisplay();
+            }
             break;
         case "clear":
             prevOperation = "";
