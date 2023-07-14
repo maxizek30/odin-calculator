@@ -68,7 +68,7 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 25px;
-    
+    cursor: pointer;
 }
 .doubleWidth {
     width: 205px; /* Adjust based on your desired width and the gap between buttons */
