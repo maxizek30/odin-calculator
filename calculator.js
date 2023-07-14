@@ -2,9 +2,12 @@ let num1;
 let operationInProgress;
 let num2;
 let operation;
+let prevOperation;
 const display = document.querySelector('.display');
+const prevCalc = document.querySelector('.prevCalc');
 const calcButtons = document.querySelectorAll('.calcButton');
 resetValues();
+prevOperation = "";
 calcButtons.forEach((item) => {
     item.addEventListener('click', buttonPressed)
 });
@@ -39,6 +42,7 @@ function buttonPressed(e) {
                 //do nothing
             }
             else if (operation != "" && num2 != "") {
+                prevOperation = num1 + " " + operation + " " + num2;
                 num1 = operate();
                 let temp = num1;
                 resetValues();
@@ -54,6 +58,7 @@ function buttonPressed(e) {
             }
             break;
         case "equals":
+            prevOperation = num1 + " " + operation + " " + num2;
             num1 = operate();
             let temp = num1;
             resetValues();
@@ -61,6 +66,7 @@ function buttonPressed(e) {
             updateDisplay();
             break;
         case "clear":
+            prevOperation = "";
             resetValues();
             updateDisplay();
             break;
@@ -68,6 +74,7 @@ function buttonPressed(e) {
 
 }
 function updateDisplay() {
+    prevCalc.innerHTML = prevOperation;
     display.innerHTML = num1 + " " + operation + " " + num2;
 
 }

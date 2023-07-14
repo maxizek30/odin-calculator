@@ -18,14 +18,24 @@
      background-color: #F2F2F2;
      padding: 10px;
 }
-.display {
+
+.fullDisplay {
     background-color: #505455;
     color: white;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     width: 95%;
     height: 100px;
+}
+.prevCalc {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.display {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 .buttons {
     display: flex;
